@@ -1,5 +1,3 @@
-# Rick-And-Morty-Characters-App
-
 ## Description
 
 react.js app that will display a list of Rick and Morty characters.
