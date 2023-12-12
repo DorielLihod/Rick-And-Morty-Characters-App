@@ -32,6 +32,9 @@ function App() {
     characterName: "",
   });
 
+  //Store true/false if the button Clear all are clicked
+  const [isClear, setIsClear] = useState(false);
+
   //fetch the data from the api
   //The request changes according to the factors - search string, gender, status and current page in the table
   useEffect(() => {
@@ -44,6 +47,10 @@ function App() {
         setError("");
       })
       .catch((err) => setError(err.message));
+
+    if (currentPage != 1) {
+      setIsClear(false);
+    }
   }, [currentPage, search, gender, status]);
 
   //Show the dialog window if the array of episode IDs is not empty
@@ -69,6 +76,7 @@ function App() {
           setStatus(StatusText);
           setCurrentPage(0);
         }}
+        isClear={(flag) => setIsClear(flag)}
       />
 
       {/* Show the Characters Table if there is no error */}
@@ -82,10 +90,10 @@ function App() {
       />
 
       {/* Show the Page picker under the table if there is no error */}
-
       <PagePicker
         currentPage={(page) => setCurrentPage(page)}
         pagesNumber={characters?.info.pages}
+        isClear={isClear}
       />
 
       {/* A dialog window containing a picture of the character + first episode + last episode */}

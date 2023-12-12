@@ -19,13 +19,15 @@ interface Props {
   onGender: (GenderText: string) => void;
   //Props from child to parent that contain the status string
   onStatus: (StatusText: string) => void;
+  //Props from child to parent that contain true/false if the button Clear all are clicked
+  isClear: (flag: boolean) => void;
 }
 
 //array of strings contain the gender and status title
 const genderStr = ["Female", "Male", "Genderless", "Unknown"];
 const statusStr = ["Alive", "Dead", "Unknown"];
 
-const FormFilter = ({ onSearch, onGender, onStatus }: Props) => {
+const FormFilter = ({ onSearch, onGender, onStatus, isClear }: Props) => {
   //Store the string of search
   const [search, setSearch] = useState("");
   //Store the string of gender
@@ -53,6 +55,8 @@ const FormFilter = ({ onSearch, onGender, onStatus }: Props) => {
 
   //handle the click of clear all
   const handleClickClear = () => {
+    isClear(true);
+
     //reset the state of gender
     onGender("");
     setGender("");
