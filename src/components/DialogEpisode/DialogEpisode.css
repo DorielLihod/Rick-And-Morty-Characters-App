@@ -1,0 +1,11 @@
+.img-character{
+    width: 100%;
+    height: 280px;
+    object-fit: cover;    
+}
+
+.divder{
+    opacity: 30%;
+    border: 1.1px solid;
+    color: gray
+}
