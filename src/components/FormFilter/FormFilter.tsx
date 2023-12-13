@@ -99,7 +99,9 @@ const FormFilter = ({ onSearch, onGender, onStatus, isClear }: Props) => {
             onChange={handleChangeGender}
           >
             {genderStr.map((title) => (
-              <MenuItem value={title}>{title}</MenuItem>
+              <MenuItem key={title} value={title}>
+                {title}
+              </MenuItem>
             ))}
           </Select>
         </FormControl>
@@ -115,7 +117,9 @@ const FormFilter = ({ onSearch, onGender, onStatus, isClear }: Props) => {
             onChange={handleChangeStatus}
           >
             {statusStr.map((title) => (
-              <MenuItem value={title}>{title}</MenuItem>
+              <MenuItem key={title} value={title}>
+                {title}
+              </MenuItem>
             ))}
           </Select>
         </FormControl>

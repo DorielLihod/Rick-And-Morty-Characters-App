@@ -6,12 +6,15 @@ import PagePicker from "./components/PagePicker/PagePicker";
 import CharactersTable from "./components/CharactersTable/CharactersTable";
 import { FetchCharacters } from "./components/models/models";
 import DialogEpisode from "./components/DialogEpisode/DialogEpisode";
+import CardsContainer from "./components/CardsContainer";
 
 function App() {
   //Store the data after fetch of data from api - Rick And Morty
   const [characters, setCharacters] = useState<FetchCharacters>();
   //store the error message if exist
   const [error, setError] = useState("");
+
+  const [view, setView] = useState("Table");
 
   //Store the Search,Gender and Status values
   const [search, setSearch] = useState("");
@@ -63,31 +66,51 @@ function App() {
   return (
     <div>
       {/* NavBar on the top of screen */}
-      <NavBar />
+      <NavBar changeView={(viewStr) => setView(viewStr)} />
 
       {/* Form with filters search,gender and status */}
       <FormFilter
-        onSearch={(searchText) => setSearch(searchText)}
+        onSearch={(searchText) => {
+          setSearch(searchText);
+          setCurrentPage(1);
+        }}
         onGender={(GenderText) => {
           setGender(GenderText);
-          setCurrentPage(0);
+          setCurrentPage(1);
         }}
         onStatus={(StatusText) => {
           setStatus(StatusText);
-          setCurrentPage(0);
+          setCurrentPage(1);
         }}
         isClear={(flag) => setIsClear(flag)}
       />
 
       {/* Show the Characters Table if there is no error */}
-      <CharactersTable
-        characters={characters?.results}
-        episodes={(fristAndLastEpisodes) => setepisodesId(fristAndLastEpisodes)}
-        selectedCharacter={(img, name) =>
-          setSelectedCharacter({ imageUrl: img, characterName: name })
-        }
-        error={error}
-      />
+      {view === "Table" && (
+        <CharactersTable
+          characters={characters?.results}
+          episodes={(fristAndLastEpisodes) =>
+            setepisodesId(fristAndLastEpisodes)
+          }
+          selectedCharacter={(img, name) =>
+            setSelectedCharacter({ imageUrl: img, characterName: name })
+          }
+          error={error}
+        />
+      )}
+
+      {view === "Card" && (
+        <CardsContainer
+          characters={characters?.results}
+          episodes={(fristAndLastEpisodes) =>
+            setepisodesId(fristAndLastEpisodes)
+          }
+          selectedCharacter={(img, name) =>
+            setSelectedCharacter({ imageUrl: img, characterName: name })
+          }
+          error={error}
+        />
+      )}
 
       {/* Show the Page picker under the table if there is no error */}
       <PagePicker

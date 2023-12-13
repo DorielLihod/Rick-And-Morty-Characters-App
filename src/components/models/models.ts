@@ -5,10 +5,10 @@ export interface FetchCharacters {
     next: string;
     prev: string;
   };
-  results: Characters[];
+  results: Character[];
 }
 
-export interface Characters {
+export interface Character {
   id: number;
   name: string;
   status: string;

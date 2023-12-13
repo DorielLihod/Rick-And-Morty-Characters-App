@@ -1,4 +1,4 @@
-import { Characters } from "../models/models";
+import { Character } from "../models/models";
 import {
   Avatar,
   Box,
@@ -13,10 +13,10 @@ import {
 } from "@mui/material";
 
 interface Props {
-  //contain
+  //contain string of error
   error: string;
   //Props from the parent that contain the characters data
-  characters: Characters[] | undefined;
+  characters: Character[] | undefined;
   //Props from child to parent that contain array of string - frist and last episodes
   episodes: (fristAndLastEpisodes: string[]) => void;
   //Props from child to parent that contain image url and name of selected characters
@@ -24,7 +24,7 @@ interface Props {
 }
 
 //An array that stores the headers of the table
-const headersTable = ["", "Name", "Origin", "Status", "species", "Gender"];
+const headersTable = ["", "Name", "Origin", "Status", "Species", "Gender"];
 
 const CharactersTable = ({
   error,

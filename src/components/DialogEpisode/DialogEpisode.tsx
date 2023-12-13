@@ -8,11 +8,14 @@ import { Box, Typography } from "@mui/material";
 import "./DialogEpisode.css";
 
 interface Props {
+  //Props from parent sign if the dialog is open
   isOpenChild: boolean;
+  //Props from parent Object of Character details
   charctersDetails: {
     imageUrl: string;
     characterName: string;
   };
+  //Props from parent get the id of first and last episode
   idEpisodes: string[];
 }
 
@@ -81,7 +84,7 @@ const DialogEpisode = ({
               {episodes && episodes[0].episode}
             </Typography>
 
-            <hr className="divder" />
+            <hr className="divider" />
 
             {/*Last Appearance*/}
             <Typography variant="h6" display="inline">
@@ -97,7 +100,7 @@ const DialogEpisode = ({
                 : episodes && episodes[0].episode}
             </Typography>
 
-            <hr className="divder" />
+            <hr className="divider" />
           </DialogContent>
         </Dialog>
       )}
