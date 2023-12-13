@@ -6,7 +6,7 @@ import PagePicker from "./components/PagePicker/PagePicker";
 import CharactersTable from "./components/CharactersTable/CharactersTable";
 import { FetchCharacters } from "./components/models/models";
 import DialogEpisode from "./components/DialogEpisode/DialogEpisode";
-import CardsContainer from "./components/CardsContainer";
+import CardsContainer from "./components/CardsContainer/CardsContainer";
 
 function App() {
   //Store the data after fetch of data from api - Rick And Morty
@@ -85,7 +85,7 @@ function App() {
         isClear={(flag) => setIsClear(flag)}
       />
 
-      {/* Show the Characters Table if there is no error */}
+      {/* Show the Characters Table if the view is Table */}
       {view === "Table" && (
         <CharactersTable
           characters={characters?.results}
@@ -99,6 +99,7 @@ function App() {
         />
       )}
 
+      {/* Show the Characters Table if the view is Cards */}
       {view === "Card" && (
         <CardsContainer
           characters={characters?.results}

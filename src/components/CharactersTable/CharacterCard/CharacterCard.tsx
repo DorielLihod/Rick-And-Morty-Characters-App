@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import { Avatar, Box, Grid } from "@mui/material";
 import "./CharacterCard.css";
 
-import { Character } from "./models/models";
+import { Character } from "../../models/models";
 
 interface Props {
   //Props from the parent that contain the character details

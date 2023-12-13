@@ -71,7 +71,9 @@ const CharactersTable = ({
             <TableHead>
               <TableRow>
                 {headersTable.map((title) => (
-                  <TableCell align="left">{title}</TableCell>
+                  <TableCell key={title} align="left">
+                    {title}
+                  </TableCell>
                 ))}
               </TableRow>
             </TableHead>

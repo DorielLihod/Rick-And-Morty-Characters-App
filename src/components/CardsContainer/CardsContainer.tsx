@@ -1,6 +1,6 @@
-import CharacterCard from "./CharacterCard";
+import CharacterCard from "../CharactersTable/CharacterCard/CharacterCard";
 import Grid from "@mui/material/Grid";
-import { Character } from "./models/models";
+import { Character } from "../models/models";
 import { Box, Typography } from "@mui/material";
 
 interface Props {
