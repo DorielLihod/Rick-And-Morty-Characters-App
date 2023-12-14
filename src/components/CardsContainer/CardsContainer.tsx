@@ -1,4 +1,4 @@
-import CharacterCard from "../CharactersTable/CharacterCard/CharacterCard";
+import CharacterCard from "./CharacterCard/CharacterCard";
 import Grid from "@mui/material/Grid";
 import { Character } from "../models/models";
 import { Box, Typography } from "@mui/material";
@@ -30,6 +30,7 @@ const CardsContainer = ({
         paddingTop: 1,
       }}
     >
+      {/*If there is error show No Result*/}
       {error && (
         <Box
           display="flex"
@@ -43,6 +44,8 @@ const CardsContainer = ({
           </Typography>
         </Box>
       )}
+
+      {/*If there is no error show The Card container*/}
       {!error && (
         <Grid container spacing={2}>
           {characters?.map((character) => (

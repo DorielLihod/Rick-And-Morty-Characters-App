@@ -49,6 +49,7 @@ const CharactersTable = ({
       alignItems="center"
       sx={{ boxShadow: 5, maxWidth: "99%", minHeight: 645, marginLeft: "0.5%" }}
     >
+      {/*If there is error show No Result*/}
       {error && (
         <Box
           display="flex"
@@ -62,6 +63,8 @@ const CharactersTable = ({
           </Typography>
         </Box>
       )}
+
+      {/*If there is no error show The Card container*/}
       {!error && (
         <TableContainer
           component={Paper}

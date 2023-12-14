@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import { Episode } from "../models/models";
 import apiClient from "../../services/api-client";
 import { Box, Typography } from "@mui/material";
+
 import "./DialogEpisode.css";
 
 interface Props {
