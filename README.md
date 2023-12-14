@@ -8,9 +8,9 @@ A React.js app that displays a list of Rick and Morty characters, built with Rea
 
 ### Installing
 
-1. Clone the repository.
-2. cd your-project.
-3. yarn install
+- Clone the repository.
+- cd your-project.
+- yarn install
 
 ### Executing program
 
