@@ -1,12 +1,16 @@
+# Rick and Morty Character App
+
 ## Description
 
-react.js app that will display a list of Rick and Morty characters.
+A React.js app that displays a list of Rick and Morty characters, built with React, TypeScript, and Material-UI.
 
 ## Getting Started
 
 ### Installing
 
-- yarn install
+1. Clone the repository.
+2. cd your-project.
+3. yarn install
 
 ### Executing program
 
