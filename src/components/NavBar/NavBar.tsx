@@ -35,7 +35,7 @@ const NavBar = ({ changeView }: Props) => {
         <Box sx={{ marginTop: 1, marginBottom: 1 }}>
           <FormControl>
             <InputLabel sx={{ color: "white" }} id="demo-simple-select-label">
-              Status
+              View
             </InputLabel>
             <Select
               sx={{ color: "white" }}
